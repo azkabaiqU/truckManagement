@@ -1,0 +1,44 @@
+:root {
+  font-family: poppins, sans-serif;
+  background-color: #F8F8F8;
+  /* line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;  */
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+h1,h2,h3,h4,h5,h6, p {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* *{
+  overflow-y: hidden;
+} */
+
+/* Apply backdrop blur and transparent background */
+.custom-popup .leaflet-popup-content-wrapper {
+  box-shadow: none !important; /* Remove the default shadow */
+  background-color: rgba(0, 0, 0, 0.5) !important; /* Set transparent background with 30% opacity */
+  backdrop-filter: blur(10px) !important; /* Apply backdrop blur */
+  border-radius: 15px; /* Optional: add rounded corners */
+}
+
+.leaflet-popup-close-button {
+  color: white !important;
+
+}
+
+map {
+  
+}

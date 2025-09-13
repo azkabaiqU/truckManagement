@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Map with Trucks and Containers</title>
+  <!-- Link to Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <style>
+    #map {
+      height: 600px;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+<h3>Interactive Map with Trucks and Containers</h3>
+<div id="map"></div>
+
+<!-- Link to Leaflet JS -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script>
+  // Initialize the map with a starting center
+  var map = L.map('map').setView([37.7749, -122.4194], 13);  // San Francisco coordinates as example
+
+  // Set OpenStreetMap as tile layer for the map
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(map);
+
+  // Truck data with coordinates and status
+  var trucks = [
+    { id: 1, lat: 37.7749, lng: -122.4194, status: "On the way to Task 1" },  // Truck 1
+    { id: 2, lat: 37.7849, lng: -122.4294, status: "Delivered to Task 2" },  // Truck 2
+    { id: 3, lat: 37.7949, lng: -122.4394, status: "Awaiting pickup for Task 3" } // Truck 3
+  ];
+
+  // Container data with coordinates and associated truck ID
+  var containers = [
+    { id: 1, lat: 37.7750, lng: -122.4195, truckId: 1, task: "Task 1" },
+    { id: 2, lat: 37.7850, lng: -122.4295, truckId: 2, task: "Task 2" },
+    { id: 3, lat: 37.7950, lng: -122.4395, truckId: 3, task: "Task 3" }
+  ];
+
+  // Add truck markers to the map with truck icons
+  trucks.forEach(function(truck) {
+    L.marker([truck.lat, truck.lng], {
+      icon: L.icon({
+        iconUrl: 'https://img.icons8.com/ios/50/000000/truck.png',  // Truck icon
+        iconSize: [30, 30],
+        iconAnchor: [15, 30],
+        popupAnchor: [0, -30]
+      })
+    })
+    .addTo(map)
+    .bindPopup("<strong>Truck " + truck.id + "</strong><br>Status: " + truck.status);
+  });
+
+  // Add container markers to the map with container icons
+  containers.forEach(function(container) {
+    var infoContent = "<h4>Container " + container.id + "</h4>" +
+                      "<p>Task: " + container.task + "</p>" +
+                      "<p>Assigned Truck ID: " + container.truckId + "</p>" +
+                      "<p>Status: " + trucks.find(t => t.id === container.truckId).status + "</p>";
+
+    L.marker([container.lat, container.lng], {
+      icon: L.icon({
+        iconUrl: 'https://img.icons8.com/ios/50/000000/container.png',  // Container icon
+        iconSize: [30, 30],
+        iconAnchor: [15, 30],
+        popupAnchor: [0, -30]
+      })
+    })
+    .addTo(map)
+    .bindPopup(infoContent); // Show truck status when container is clicked
+  });
+
+</script>
+
+</body>
+</html>
