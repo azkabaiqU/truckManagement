@@ -1,7 +1,7 @@
 // import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
-function Navbar({ setSelectedMenu }) {
+function NavbarMobile({ setSelectedMenu }) {
     // navbar state change the background color when clicked
 // const [clicked, setClicked] = useState(null);
 
@@ -10,11 +10,11 @@ function Navbar({ setSelectedMenu }) {
 
 return (
 <nav
-    className="lg:block hidden fixed left-10 self-start flex flex-col items-center px-4 pb-4 pt-5 space-y-4  h-screen border-r border-black/10 overflow-visible z-30">
+    className="block lg:hidden fixed bottom-0 bg-[#F8F8F8] self-start flex justify-center items-center px-4 py-2 pb-3  space-x-11  w-screen border-t border-black/10 overflow-visible z-40">
     {/* Dashboard */}
     <NavLink to="/Dashboard" onClick={() => setSelectedMenu && setSelectedMenu('dashboard')}
         className={({ isActive }) =>
-          `relative overflow-visible group w-[65px] h-[65px] rounded-full flex items-center justify-center transition-all
+          `relative overflow-visible group sm:w-[65px] w-[50px] sm:h-[65px] h-[50px] rounded-full flex items-center justify-center transition-all
           duration-100 ${isActive ? 'bg-black text-white' : 'bg-white text-black'}`
         }
         >
@@ -33,16 +33,12 @@ return (
                 d="M18.1081 20H12.703C12.1975 20 11.7221 19.8027 11.3646 19.444C11.0135 19.0959 10.8108 18.6084 10.8108 18.1081V12.7027C10.8108 12.1973 11.0075 11.7219 11.3646 11.364C11.7205 11.0073 12.1959 10.8108 12.703 10.8108H18.1081C18.6148 10.8108 19.0903 11.0073 19.4465 11.364C19.8035 11.7221 20 12.1973 20 12.7027V18.1081C20 18.6081 19.7975 19.0957 19.4446 19.4459C19.0884 19.8027 18.6132 20 18.1081 20ZM12.703 11.8919C12.4851 11.8919 12.2816 11.9757 12.13 12.1278C11.9762 12.2813 11.8919 12.4857 11.8919 12.7027V18.1081C11.8919 18.3219 11.9778 18.5297 12.1278 18.6784C12.2835 18.8343 12.487 18.9189 12.703 18.9189H18.1081C18.324 18.9189 18.5275 18.8343 18.6813 18.6803C18.833 18.53 18.9189 18.3219 18.9189 18.1081V12.7027C18.9189 12.4857 18.8346 12.2813 18.6811 12.1278C18.5294 11.9757 18.3259 11.8919 18.1081 11.8919H12.703Z"
                 fill="currentColor" />
         </svg>
-        <div
-            className=" absolute -right-36 py-2 px-7 bg-white/40 backdrop-blur-xl rounded-full shadow-2xl hidden group-hover:block duration-100 z-50">
-            <p className="text-sm text-black">Dashboard</p>
-        </div>
     </NavLink>
 
     {/* Task Management */}
     <NavLink to="/Task" onClick={() => setSelectedMenu && setSelectedMenu('task')}
         className={({ isActive }) =>
-          `relative overflow-visible group mt-3 w-[65px] h-[65px] rounded-full flex items-center justify-center
+          `relative overflow-visible group mt-3 sm:w-[65px] w-[50px] sm:h-[65px] h-[50px] rounded-full flex items-center justify-center
           transition-all duration-100 ${isActive ? 'bg-black text-white' : 'bg-white text-black'}`
         }
         >
@@ -53,16 +49,13 @@ return (
             <path d="M13 7L16.4095 9.13096C16.7644 9.35275 17.2198 9.33012 17.551 9.07424L28 1" stroke="currentColor"
                 strokeLinecap="round" strokeLinejoin="round" />
         </svg>
-        <div
-            className="absolute -right-48 py-2 px-7 bg-white/40 backdrop-blur-xl rounded-full shadow-2xl hidden group-hover:block duration-100">
-            <p className="text-sm text-black">Task Management</p>
-        </div>
+
     </NavLink>
 
     {/* Profile */}
     <NavLink to="/Profile" onClick={() => setSelectedMenu && setSelectedMenu('profile')}
 className={({ isActive }) =>
-          `relative overflow-visible group mt-3 w-[65px] h-[65px] rounded-full flex items-center justify-center
+          `relative overflow-visible group mt-3 sm:w-[65px] w-[50px] sm:h-[65px] h-[50px] rounded-full flex items-center justify-center
           transition-all duration-100 ${isActive ? 'bg-black text-white' : 'bg-white text-black'}`
         }
         >
@@ -71,13 +64,9 @@ className={({ isActive }) =>
             <circle cx="8.9999" cy="5.57143" r="5.14286" stroke="currentColor" strokeWidth="0.857143" />
             <circle cx="9" cy="16.7143" r="8.57143" stroke="currentColor" strokeWidth="0.857143" />
         </svg>
-        <div
-            className="absolute -right-28 py-2 px-7 bg-white/40 backdrop-blur-xl rounded-full shadow-2xl hidden group-hover:block duration-100">
-            <p className="text-sm text-black">Profile</p>
-        </div>
     </NavLink>
 </nav>
 );
 }
 
-export default Navbar;
+export default NavbarMobile;

@@ -5,123 +5,122 @@ export default function Task({ setShowCreateNewTaskPop, setShowEditTaskPop, setS
 
 return (
 <>
-        <section className='px-7 pb-7 pt-6 flex gap-5 w-full  '>
-            {/* left */}
-            <div className='w-[550px] h-full   rounded-3xl '>
-                <div className='p-3 bg-white rounded-2xl'>
-                    <input className='bg-[#F8F8F8] w-full py-4 px-4 rounded-xl' type="text" id="searchInput"
-                        placeholder="Search your tasks..."></input>
-                    <button 
-                        onClick={() => setShowCreateNewTaskPop(true)}
-                        className='w-full py-4 rounded-xl bg-black text-white mt-3 flex items-center justify-center gap-3'>
-                        <p className='flex items-center'><i className="text-white fa-solid fa-plus mr-2"></i>Create new
-                            Task
-                        </p> 
+    <section className='px-7 pb-7 pt-6 flex xl:flex-row flex-col gap-5 w-full  '>
+        {/* left */}
+        <div className='2xl:w-[550px] xl:w-[370px] w-full h-full   rounded-3xl '>
+            <div className='p-3 bg-white rounded-2xl'>
+                <input className='bg-[#F8F8F8] w-full py-4 px-4 rounded-xl' type="text" id="searchInput"
+                    placeholder="Search your tasks..."></input>
+                <button onClick={()=> setShowCreateNewTaskPop(true)}
+                    className='w-full sm:py-4 py-3 rounded-xl bg-black text-white mt-3 flex items-center justify-center gap-3'>
+                    <p className='flex items-center'><i className="text-white fa-solid fa-plus mr-2"></i>Create new
+                        Task
+                    </p>
+                </button>
+            </div>
+            {/* bottom */}
+            <div className='p-3 bg-white rounded-2xl mt-5 xl:h-[760px] h-auto'>
+                <div
+                    class="bg-white rounded-xl p-4 w-full h-full xl:overflow-y-auto overflow-x-auto xl:space-y-6 space-y-0 xl:space-x-0 space-x-6 flex xl:flex-col flex-row">
+
+                    {/*
+                    <!-- Card 1 --> */}
+                    <button class="xl:w-full min-w-[300px]  xl:h-auto h-full text-left">
+                        <div class="relative xl:border-b border-b-0 xl:border-r-0 border-r xl:pb-4 pb-0 xl:pr-0 pr-4">
+                            <div class="flex justify-between">
+                                <h2 class="font-semibold">Rot# 123</h2>
+                                <span class="bg-gray-100 text-gray-600 px-4 py-2 rounded-lg text-sm">Delayed</span>
+                            </div>
+                            <p class="mt-2">Job# 2234</p>
+                            <p>Customer: ABC Sdn Bhd</p>
+                            <p>Pickup:</p>
+                            <p>Drop off:</p>
+                        </div>
                     </button>
-                </div>
-                {/* bottom */}
-                <div className='p-3 bg-white rounded-2xl mt-5 h-[760px]'>
-                    <div class="bg-white rounded-xl p-4 w-full h-full overflow-y-auto space-y-6">
 
-                        {/*
-                        <!-- Card 1 --> */}
-                        <button class="w-full text-left">
-                            <div class="relative border-b pb-4">
-                                <div class="flex justify-between">
-                                    <h2 class="font-semibold">Rot# 123</h2>
-                                    <span class="bg-gray-100 text-gray-600 px-4 py-2 rounded-lg text-sm">Delayed</span>
-                                </div>
-                                <p class="mt-2">Job# 2234</p>
-                                <p>Customer: ABC Sdn Bhd</p>
-                                <p>Pickup:</p>
-                                <p>Drop off:</p>
+                    {/*
+                    <!-- Card 2 --> */}
+                    <button class="xl:w-full min-w-[300px]  xl:h-auto h-full text-left">
+                        <div class="rrelative xl:border-b border-b-0 xl:border-r-0 border-r xl:pb-4 pb-0 xl:pr-0 pr-4">
+                            <div class="flex justify-between">
+                                <h2 class="font-semibold">Rot# 124</h2>
+                                <span class="bg-green-100 text-green-600 px-4 py-2 rounded-lg text-sm">Completed</span>
                             </div>
-                        </button>
+                            <p class="mt-2">Job# 2234</p>
+                            <p>Customer: ABC Sdn Bhd</p>
+                            <p>Pickup:</p>
+                            <p>Drop off:</p>
+                        </div>
+                    </button>
 
-                        {/*
-                        <!-- Card 2 --> */}
-                        <button class="w-full text-left">
-                            <div class="relative border-b pb-4">
-                                <div class="flex justify-between">
-                                    <h2 class="font-semibold">Rot# 124</h2>
-                                    <span
-                                        class="bg-green-100 text-green-600 px-4 py-2 rounded-lg text-sm">Completed</span>
-                                </div>
-                                <p class="mt-2">Job# 2234</p>
-                                <p>Customer: ABC Sdn Bhd</p>
-                                <p>Pickup:</p>
-                                <p>Drop off:</p>
+                    {/*
+                    <!-- Card 3 --> */}
+                    <button class="xl:w-full min-w-[300px]  xl:h-auto h-full text-left">
+                        <div class="relative xl:border-b border-b-0 xl:border-r-0 border-r xl:pb-4 pb-0 xl:pr-0 pr-4">
+                            <div class="flex justify-between">
+                                <h2 class="font-semibold">Rot# 125</h2>
+                                <span class="bg-yellow-100 text-yellow-600 px-4 py-2 rounded-lg text-sm">Picked</span>
                             </div>
-                        </button>
+                            <p class="mt-2">Job# 2234</p>
+                            <p>Customer: ABC Sdn Bhd</p>
+                            <p>Pickup:</p>
+                            <p>Drop off:</p>
+                        </div>
+                    </button>
 
-                        {/*
-                        <!-- Card 3 --> */}
-                        <button class="w-full text-left">
-                            <div class="relative border-b pb-4">
-                                <div class="flex justify-between">
-                                    <h2 class="font-semibold">Rot# 125</h2>
-                                    <span
-                                        class="bg-yellow-100 text-yellow-600 px-4 py-2 rounded-lg text-sm">Picked</span>
-                                </div>
-                                <p class="mt-2">Job# 2234</p>
-                                <p>Customer: ABC Sdn Bhd</p>
-                                <p>Pickup:</p>
-                                <p>Drop off:</p>
+                    {/*
+                    <!-- Card 4 --> */}
+                    <button class="xl:w-full min-w-[300px]  xl:h-auto h-full text-left">
+                        <div class="relative xl:border-b border-b-0 xl:border-r-0 border-r xl:pb-4 pb-0 xl:pr-0 pr-4">
+                            <div class="flex justify-between">
+                                <h2 class="font-semibold">Rot# 126</h2>
+                                <span class="bg-blue-100 text-blue-600 px-4 py-2 rounded-lg text-sm">Holding</span>
                             </div>
-                        </button>
+                            <p class="mt-2">Job# 2234</p>
+                            <p>Customer: ABC Sdn Bhd</p>
+                            <p>Pickup:</p>
+                            <p>Drop off:</p>
+                        </div>
+                    </button>
 
-                        {/*
-                        <!-- Card 4 --> */}
-                        <button class="w-full text-left">
-                            <div class="relative border-b pb-4">
-                                <div class="flex justify-between">
-                                    <h2 class="font-semibold">Rot# 126</h2>
-                                    <span class="bg-blue-100 text-blue-600 px-4 py-2 rounded-lg text-sm">Holding</span>
-                                </div>
-                                <p class="mt-2">Job# 2234</p>
-                                <p>Customer: ABC Sdn Bhd</p>
-                                <p>Pickup:</p>
-                                <p>Drop off:</p>
+                    {/*
+                    <!-- Card 4 --> */}
+                    <button class="xl:w-full min-w-[300px]  xl:h-auto h-full text-left">
+                        <div class="relative xl:border-b border-b-0 xl:border-r-0 border-r xl:pb-4 pb-0 xl:pr-0 pr-4">
+                            <div class="flex justify-between">
+                                <h2 class="font-semibold">Rot# 126</h2>
+                                <span class="bg-blue-100 text-blue-600 px-4 py-2 rounded-lg text-sm">Holding</span>
                             </div>
-                        </button>
+                            <p class="mt-2">Job# 2234</p>
+                            <p>Customer: ABC Sdn Bhd</p>
+                            <p>Pickup:</p>
+                            <p>Drop off:</p>
+                        </div>
+                    </button>
 
-                        {/*
-                        <!-- Card 4 --> */}
-                        <button class="w-full text-left">
-                            <div class="relative">
-                                <div class="flex justify-between">
-                                    <h2 class="font-semibold">Rot# 126</h2>
-                                    <span class="bg-blue-100 text-blue-600 px-4 py-2 rounded-lg text-sm">Holding</span>
-                                </div>
-                                <p class="mt-2">Job# 2234</p>
-                                <p>Customer: ABC Sdn Bhd</p>
-                                <p>Pickup:</p>
-                                <p>Drop off:</p>
-                            </div>
-                        </button>
-
-                    </div>
                 </div>
             </div>
+        </div>
 
-            {/* right */}
-            <div className="bg-white rounded-2xl p-10 relative w-full h-full">
+        {/* right */}
+        <div className="bg-white rounded-2xl p-10 relative w-full h-full">
 
+            {/*
+            <!-- Rot & Job Absolute --> */}
+            <div className="absolute top-6 right-6 text-sm font-medium text-gray-700 space-y-1">
+                <div>Rot# 124</div>
+                <div>Job# 341</div>
+            </div>
+
+            <div className="grid lg:grid-cols-2">
                 {/*
-                <!-- Rot & Job Absolute --> */}
-                <div className="absolute top-6 right-6 text-sm font-medium text-gray-700 space-y-1">
-                    <div>Rot# 124</div>
-                    <div>Job# 341</div>
-                </div>
-
-                <div className="grid grid-cols-2">
+                <!-- Left side --> */}
+                <div className="space-y-12 lg:pr-6 pr-0">
                     {/*
-                    <!-- Left side --> */}
-                    <div className="space-y-12 pr-6">
-                        {/*
-                        <!-- Driver --> */}
-                        <div className="flex items-start space-x-3">
-                            <div className='mr-3 flex items-center justify-center w-16 h-16 rounded-full bg-[#FAFAFA]'>
+                    <!-- Driver --> */}
+                    <div className="flex items-start space-x-3 ">
+                        <div className='lg:block hidden'>
+                            <div className=' mr-3 flex items-center justify-center w-16 h-16 rounded-full bg-[#FAFAFA]'>
 
                                 <svg width="32" height="32" viewBox="0 0 28 28" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -140,23 +139,25 @@ return (
                                 </svg>
 
                             </div>
-
-                            <div>
-                                <h2 className="font-medium text-2xl my-3">Driver</h2>
-                                <div className='space-y-3'>
-                                    <p>Name:</p>
-                                    <p>Driving license no:</p>
-                                    <p>License type:</p>
-                                    <p>License expiry date:</p>
-                                    <p>Availability: full time/night</p>
-                                </div>
-                            </div>
                         </div>
 
-                        {/*
-                        <!-- Truck --> */}
-                        <div className="flex items-start space-x-3">
-                            <div className='mr-3 flex items-center justify-center w-16 h-16 rounded-full bg-[#FAFAFA]'>
+                        <div>
+                            <h2 className="font-medium text-2xl my-3">Driver</h2>
+                            <div className='space-y-3'>
+                                <p>Name:</p>
+                                <p>Driving license no:</p>
+                                <p>License type:</p>
+                                <p>License expiry date:</p>
+                                <p>Availability: full time/night</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/*
+                    <!-- Truck --> */}
+                    <div className="flex items-start space-x-3 ">
+                        <div className='lg:block hidden'>
+                            <div className=' mr-3 flex items-center justify-center w-16 h-16 rounded-full bg-[#FAFAFA]'>
                                 <svg width="22" height="22" viewBox="0 0 17 17" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -174,23 +175,26 @@ return (
                                 </svg>
 
                             </div>
-
-                            <div>
-                                <h2 className="font-medium text-2xl my-3">Truck</h2>
-                                <div className='space-y-3'>
-                                    <p>Reg. number</p>
-                                    <p>Model:</p>
-                                    <p>Year:</p>
-                                    <p>Type:</p>
-                                    <p>Road Tax expiry date:</p>
-                                </div>
-                            </div>
                         </div>
 
-                        {/*
-                        <!-- Container --> */}
-                        <div className="flex items-start space-x-3">
-                            <div className='mr-3 flex items-center justify-center w-16 h-16 rounded-full bg-[#FAFAFA]'>
+                        <div>
+                            <h2 className="font-medium text-2xl my-3">Truck</h2>
+                            <div className='space-y-3'>
+                                <p>Reg. number</p>
+                                <p>Model:</p>
+                                <p>Year:</p>
+                                <p>Type:</p>
+                                <p>Road Tax expiry date:</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    {/*
+                    <!-- Container --> */}
+                    <div className="flex items-start space-x-3 ">
+                        <div className='lg:block hidden'>
+                            <div className=' mr-3 flex items-center justify-center w-16 h-16 rounded-full bg-[#FAFAFA]'>
                                 <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path d="M4.5 11H8.5" stroke="black" stroke-linecap="round"
@@ -201,91 +205,96 @@ return (
                                 </svg>
 
                             </div>
-
-                            <div>
-                                <h2 className="font-medium text-2xl my-3">Container</h2>
-                                <div className='space-y-3'>
-                                    <p>Container number:</p>
-                                    <p>Size:</p>
-                                    <p>Year:</p>
-                                    <p>Type:</p>
-                                    <p>Ro:</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/*
-                    <!-- Right side --> */}
-                    <div className="pl-10 space-y-12 border-l-[0.5px] border-[#89898999]">
-                        {/*
-                        <!-- Pickup details --> */}
-
-                        <div>
-                            <h2 className="font-medium text-2xl my-3">Pickup details</h2>
-                            <div className='space-y-3'>
-                                <p>Company:</p>
-                                <p>Address:</p>
-                                <p>Phone number</p>
-                                <p>Pickup date:</p>
-                                <p>Pickup time</p>
-                                <p>Container type: cold storage</p>
-                                <p>Container size: 40 feet</p>
-                                <p>Special requirement: Tipper</p>
-                            </div>
                         </div>
 
-                        {/*
-                        <!-- Drop-off details --> */}
-
                         <div>
-                            <h2 className="font-medium text-2xl my-3">Drop-off details</h2>
+                            <h2 className="font-medium text-2xl my-3">Container</h2>
                             <div className='space-y-3'>
-                                <p>Company:</p>
-                                <p>Address:</p>
-                                <p>Phone number</p>
-                                <p>Pickup date:</p>
-                                <p>Pickup time</p>
-                                <p>Container type: cold storage</p>
-                                <p>Container size: 40 feet</p>
-                                <p>Special requirement: Tipper</p>
+                                <p>Container number:</p>
+                                <p>Size:</p>
+                                <p>Year:</p>
+                                <p>Type:</p>
+                                <p>Ro:</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 {/*
-                <!-- Bottom Section --> */}
-                <div className="flex justify-between items-center mt-6">
+                <!-- Right side --> */}
+                <div
+                    className="flex flex-col justify-start items-start lg:pl-10 pl-0 space-y-12 lg:pt-0 lg:mt-0 pt-12 mt-12 lg:border-l-[0.5px] lg:border-t-0 border-t-[0.5px] border-[#89898999]">
+                    {/*
+                    <!-- Pickup details --> */}
 
-                    {/* Status */}
-                    <div className="flex items-center">
-                        <select
-                            className="appearance-none py-3 px-4 pr-8 rounded-lg bg-[#F8F8F8] text-gray-700 focus:outline-none"
-                            defaultValue="Delayed">
-                            <option value="Delayed">Delayed</option>
-                            <option value="Completed">Completed</option>
-                            <option value="Picked">Picked</option>
-                            <option value="Holding">Holding</option>
-                        </select>
-                        <i className="fa-solid fa-chevron-down -ml-7 text-gray-500 text-sm pointer-events-none"></i>
+                    <div className=' w-full'>
+                        <h2 className="font-medium text-2xl my-3">Pickup details</h2>
+                        <div className='space-y-3'>
+                            <p>Company:</p>
+                            <p>Address:</p>
+                            <p>Phone number</p>
+                            <p>Pickup date:</p>
+                            <p>Pickup time</p>
+                            <p>Container type: cold storage</p>
+                            <p>Container size: 40 feet</p>
+                            <p>Special requirement: Tipper</p>
+                        </div>
                     </div>
 
-
                     {/*
-                    <!-- Edit button --> */}
-                    <div className="flex items-center space-x-4">
-                        <button onClick={() => setShowDeleteTaskPop(true)} className='py-3 px-4 rounded-full bg-[#F8F8F8] hover:bg-transparent duration-200'>
-                            <i className="fa-regular fa-trash-can text-gray-600"></i>
-                        </button>
+                    <!-- Drop-off details --> */}
 
-                        <button onClick={() => setShowEditTaskPop(true)} className='py-3 px-6 rounded-lg bg-[#F8F8F8] hover:bg-transparent duration-200'>
-                            <span>Edit information</span>
-                        </button>
+                    <div className=' w-full '>
+                        <h2 className="font-medium text-2xl my-3">Drop-off details</h2>
+                        <div className='space-y-3  '>
+                            <p>Company:</p>
+                            <p>Address:</p>
+                            <p>Phone number</p>
+                            <p>Pickup date:</p>
+                            <p>Pickup time</p>
+                            <p>Container type: cold storage</p>
+                            <p>Container size: 40 feet</p>
+                            <p>Special requirement: Tipper</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
+
+            {/*
+            <!-- Bottom Section --> */}
+            <div className=" flex sm:flex-row flex-col sm:justify-between sm:items-center items-start lg:mt-6 mt-12">
+
+                {/* Status */}
+                <div className="flex items-center sm:mb-0 mb-4">
+                    <select
+                        className="appearance-none py-3 px-4 pr-8 sm:w-auto w-full rounded-lg bg-[#F8F8F8] text-gray-700 focus:outline-none"
+                        defaultValue="Delayed">
+                        <option value="Delayed">Delayed</option>
+                        <option value="Completed">Completed</option>
+                        <option value="Picked">Picked</option>
+                        <option value="Holding">Holding</option>
+                    </select>
+                    <i className="fa-solid fa-chevron-down -ml-7 text-gray-500 text-sm pointer-events-none"></i>
+                </div>
+
+
+                {/*
+                <!-- Edit button --> */}
+                <div className="flex sm:flex-row flex-row-reverse sm:justify-end justify-between items-center sm:space-x-4 w-full">
+                    <button onClick={()=> setShowDeleteTaskPop(true)} className='py-3 px-4 rounded-full bg-[#F8F8F8]
+                        hover:bg-transparent duration-200'>
+                        <i className="fa-regular fa-trash-can text-gray-600"></i>
+                    </button>
+
+                    <button onClick={()=> setShowEditTaskPop(true)} className='py-3 px-6 rounded-lg bg-[#F8F8F8]
+                        hover:bg-transparent duration-200 space-x-3'>
+                            <i class="fa-solid fa-pen-fancy"></i>
+                        <span>Edit information</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
 </>
 );
 }
