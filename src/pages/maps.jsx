@@ -32,7 +32,7 @@ const containers = [
   {
     id: 1,
     position: [3.075, 101.52],
-    status: "Loaded",
+    status: "Ready",
     info: "Container #1 - Ready for shipment",
   },
   {
@@ -106,8 +106,7 @@ export default function Maps() {
                 className="flex justify-between items-center cursor-pointer"
                 onClick={() => toggleDropdown(c.id)}
               >
-                <div className="flex items-center">
-                  <span className="w-2.5 h-2.5 rounded-full bg-red-500 mr-2"></span>
+                <div className="flex items-center">t
                   <span>{c.status}</span>
                 </div>
                         <i
